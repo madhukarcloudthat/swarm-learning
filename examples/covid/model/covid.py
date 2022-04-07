@@ -35,6 +35,7 @@ def main():
   min_peers = int(os.getenv('MIN_PEERS', str(default_min_peers)))
 
   model_name = 'covid_tf'
+  
   #Defining paths
   TRAIN_PATH = "CovidDataset/CovidDataset/Train"
   VAL_PATH = "CovidDataset/CovidDataset/Val"
@@ -90,7 +91,10 @@ def main():
             epochs=max_epochs,
             verbose=1,            
             callbacks=[swarmCallback])
-
+  #Getting summary
+  summary=hist_new.history
+  print(summary)
+  model.save("model_covid.h5")
   # Save model and weights
   model_path = os.path.join(modelDir, model_name)
   model.save(model_path)

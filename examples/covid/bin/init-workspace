@@ -56,7 +56,7 @@ then
    echo "Some or all of the parameters are empty";
    help
 fi
-if [ "$example" != "mnist-keras" ] && [ "$example" != "mnist-pytorch" ] && [ "$example" != "fraud-detection-keras" ]
+if [ "$example" != "mnist-keras" ] && [ "$example" != "mnist-pytorch" ] && [ "$example" != "fraud-detection-keras" ] && [ "$example" != "covid" ]
 then
    echo "Example $example is not part of quick start."
    help
